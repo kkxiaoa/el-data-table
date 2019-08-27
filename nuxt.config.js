@@ -7,6 +7,7 @@ const {env} = process
 const isProd = env.MODE == 'prod'
 const mockServer =
   'https://easy-mock.com/mock/5c1b3895fe5907404e654045/femessage-mock/'
+const mockServerOne = 'http://yapi.demo.qunar.com/mock/89555/el-data-table/'
 
 // 不能以斜杠结尾
 let apiServer = env.API_SERVER
@@ -18,12 +19,15 @@ const config = {
   env: {
     mock: {
       '/deepexi-tenant': mockServer,
-      '/deepexi-permission': mockServer
+      '/deepexi-permission': mockServer,
+      '/el-table': mockServerOne
     },
-    dev: apiServer ? {
-      '/deepexi-tenant': apiServer,
-      '/deepexi-permission': apiServer
-    } : {}
+    dev: apiServer
+      ? {
+          '/deepexi-tenant': apiServer,
+          '/deepexi-permission': apiServer
+        }
+      : {}
   }
 }
 
