@@ -7,7 +7,7 @@
         status-icon
         :rules="rules"
         ref="loginForm"
-        class=""
+        class="demo"
       >
         <el-form-item label="" prop="username">
           <el-input placeholder="账号" v-model.trim="form.username"></el-input>
